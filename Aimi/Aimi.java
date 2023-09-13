@@ -4,7 +4,7 @@ class Aimi{
         System.out.println("It might be very useful.");
         System.out.println("But now it is gone.");
         System.out.println("--------------------");
-        System.out.println("The website you seek");
+        System.out.println("The web site you seek");
         System.out.println("cannot be located but");
         System.out.println("countless more exist.");
         System.out.println("--------------------");
