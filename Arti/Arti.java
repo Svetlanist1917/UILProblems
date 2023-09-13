@@ -1,23 +1,21 @@
-import java.io.*;
-import java.util.Scanner;
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
 
-public class Arti {
-    public static void main(String[] args){
-        try{
-            Scanner reader = new Scanner("Arti.dat");
-            while (reader.hasNextDouble()){
-                double number = reader.nextDouble();
 
-                if (number >= 0) {
-                    double squareRoot = Math.sqrt(number);
-                    System.out.println("Square root of " + number + " is: " + squareRoot);
-                } else {
-                    System.out.println("Cannot calculate square root of a negative number: " + number);
+class Arti {
+    public static void main(String[] args) {
+        try {
+            File myFile = new File("arti.dat");
+            Scanner myScanner = new Scanner(myFile);
+            while (myScanner.hasNextLine()){
+                String line = myScanner.nextLine();
+                float num = Float.parseFloat(line);
+                System.out.printf("%s %.3f\n",line, Math.sqrt(num));
             }
-
-        } catch (Exception ohNo){
-            System.out.println("No file found");
+            myScanner.close();
+        } catch (Exception e) {
+            System.out.println("err");
         }
-
-        System.out.println("The square root of " + number + " is " + Math.sqrt(number));
+    }
 }
