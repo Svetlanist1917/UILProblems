@@ -1,0 +1,15 @@
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+class Bayani {
+    public static void main(String[]args) {
+        try{;
+            File data = new File("Bayani.dat");
+            Scanner Reader = new Scanner(data);
+            while (Reader.hasNextLine()) {
+                String line = Reader.nextLine();
+                float number = Float.parseFloat(line);
+                System.out.println("$");
+            }
+    }
+}
