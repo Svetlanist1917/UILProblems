@@ -9,11 +9,8 @@ public class Arti {
             Scanner reader = new Scanner(data);
             while (reader.hasNextDouble()){
             Float number = Float.parseFloat(reader.nextLine());
-                if (number >= 0){
                     double squareRoot = Math.sqrt(number);
                     System.out.printf("%.0f %.3f\n", number, squareRoot);
-                }else{
-                    System.out.println("Cannot calculate square root of a negative number: " + number);
                 }
             }
             reader.close();
