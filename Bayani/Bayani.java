@@ -26,7 +26,7 @@ class Bayani {
             }
             reader.close();
 
-            DecimalFormat df = new DecimalFormat("$ 0000.00");
+            DecimalFormat df = new DecimalFormat("$ ####.##");
             double sum = 0.0;
 
             for (Double number : numbersList) {
