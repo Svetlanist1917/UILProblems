@@ -20,18 +20,29 @@ class Family {
             }
 
             for(int i = 0; i < amountt_of_lines; i++){
-                String i_line = lines.get(amountt_of_lines);
+                String i_line = lines.get(i);
                 String first_name;
                 String second_name;
-                Boolean is_older;
                 int index = 0;
                 while(i_line.charAt(index) != ' '){
                     index++;
                 }
+                Boolean is_older = i_line.charAt(index + 1) != 'S';
                 first_name = i_line.substring(0, index);
-                System.out.println(first_name + "g");
+                index++;
+                while(i_line.charAt(index) != ' '){
+                    index++;
+                }
+                second_name = i_line.substring(index + 1);
+                FamGen person = new FamGen();
+                person.name = first_name;
+                famgen_list.add(person);
+                System.out.println(second_name);
             }
-
+            //for (int i = 0; i < famgen_list.size(); i++){
+                //FamGen lel = famgen_list.get(i);
+                //System.out.println(lel.name);
+            //}
             myScanner.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -42,4 +53,10 @@ class Family {
 class FamGen{
     public String name;
     public int generation;
+    void SetName(String n){
+        name = n;
+    }
+    void SetGen(int n){
+        generation = n;
+    }
 }
